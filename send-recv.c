@@ -38,7 +38,7 @@ int main(int argc, char** argv)
     {
         srand(100);
 
-        randomNumbers = generate_random_array(randomNumbersSize, 1, 1000);
+        randomNumbers = generate_random_array(randomNumbersSize, 1, 100);
 
         // Calculate elements per process
         int lastElementIdx;
