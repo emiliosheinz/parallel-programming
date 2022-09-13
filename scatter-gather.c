@@ -47,7 +47,7 @@ int main(int argc, char** argv)
     if (world_rank == 0)
     {
         srand(100);
-        randomNumbers = generate_random_array(randomNumbersSize, 1, 1000);
+        randomNumbers = generate_random_array(randomNumbersSize, 1, 100);
     }
 
     // We calculate de elements per process
