@@ -38,14 +38,15 @@ int main(int argc, char** argv)
     {
         srand(100);
 
-        randomNumbers = generate_random_array(randomNumbersSize, 1, 1000);
+        randomNumbers = generate_random_array(randomNumbersSize, 1, 100);
 
         // Calculate elements per process
+        int lastWorldIdx = world_size - 1;
+        int elementsPerProcess = randomNumbersSize / lastWorldIdx;
         int lastElementIdx;
-        int elementsPerProcess = randomNumbersSize / (world_size - 1);
 
         // Send the quantity and elements to the slaves
-        for (int i=1; i<world_size - 1; i++) {
+        for (int i=1; i<lastWorldIdx; i++) {
             lastElementIdx = elementsPerProcess * (i-1);
 
             MPI_Send(&elementsPerProcess, 1, MPI_INT, i, 0, MPI_COMM_WORLD);
@@ -53,7 +54,6 @@ int main(int argc, char** argv)
         }
         
         // The last slave needs to receive the rest of the elements
-        int lastWorldIdx = world_size - 1;
         lastElementIdx = elementsPerProcess * (lastWorldIdx - 1);
         int elementsLeft = randomNumbersSize - lastElementIdx;
         MPI_Send(&elementsLeft, 1, MPI_INT, lastWorldIdx, 0, MPI_COMM_WORLD);

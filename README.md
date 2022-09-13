@@ -23,7 +23,7 @@ mpicc send-recv.c -o sendrecv && mpiexec sendrecv
 
 **MPI_Scatter e MPI_Gather:**
 ```
-mpicc scatter-gather.c -o scattergether && mpiexec scattergether
+mpicc scatter-gather.c -o scattergather && mpiexec scattergather
 ```
 
 

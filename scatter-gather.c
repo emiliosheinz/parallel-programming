@@ -1,4 +1,4 @@
-// mpicc scatter-gather.c -o scattergether && mpiexec scattergether
+// mpicc scatter-gather.c -o scattergather && mpiexec scattergather
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -47,11 +47,11 @@ int main(int argc, char** argv)
     if (world_rank == 0)
     {
         srand(100);
-        randomNumbers = generate_random_array(randomNumbersSize, 1, 1000);
+        randomNumbers = generate_random_array(randomNumbersSize, 1, 100);
     }
 
     // We calculate de elements per process
-    // This calc is buggy when the size of the array and the number of processes are not disible
+    // This calc is buggy when the size of the array and the number of processes are not divisible
     int elementsPerProcess = randomNumbersSize / world_size;;
 
     // I've tried to change the elements per processes of the rank 0 processes to take all the 
