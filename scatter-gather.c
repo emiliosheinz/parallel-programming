@@ -51,7 +51,7 @@ int main(int argc, char** argv)
     }
 
     // We calculate de elements per process
-    // This calc is buggy when the size of the array and the number of processes are not disible
+    // This calc is buggy when the size of the array and the number of processes are not divisible
     int elementsPerProcess = randomNumbersSize / world_size;;
 
     // I've tried to change the elements per processes of the rank 0 processes to take all the 
