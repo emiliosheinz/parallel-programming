@@ -1,4 +1,4 @@
-// mpicc scatter-gather.c -o scattergether && mpiexec scattergether
+// mpicc scatter-gather.c -o scattergather && mpiexec scattergather
 #include <mpi.h>
 #include <stdio.h>
 #include <stdlib.h>
