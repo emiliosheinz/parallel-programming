@@ -1,4 +1,4 @@
-# Parallel Programming
+# 🔁 parallel-programming
 
 Desenvolva uma aplicação utilizando a linguagem de programação C e a biblioteca OpenMPI para desenvolver um programa que realize a soma de um vetor de números aleatórios de forma distribuída.
 
@@ -26,4 +26,6 @@ mpicc send-recv.c -o sendrecv && mpiexec sendrecv
 mpicc scatter-gather.c -o scattergather && mpiexec scattergather
 ```
 
-
+## :man: Contributors
+- [@emiliosheinz](https://github.com/emiliosheinz)
+- [@fumegalli](https://github.com/fumegalli)
