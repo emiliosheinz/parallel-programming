@@ -25,7 +25,3 @@ mpicc send-recv.c -o sendrecv && mpiexec sendrecv
 ```
 mpicc scatter-gather.c -o scattergather && mpiexec scattergather
 ```
-
-## :man: Contributors
-- [@emiliosheinz](https://github.com/emiliosheinz)
-- [@fumegalli](https://github.com/fumegalli)
